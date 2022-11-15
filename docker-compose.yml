@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  mysql_db:
+    image: mysql:5.7
+    container_name: mysql
+    hostname: mysql
+    environment:
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=myrootpassword
+      - MYSQL_DATABASE=mydatabase
+      - MYSQL_USER=username
+      - MYSQL_PASSWORD=mypassword
+    ports:
+      - "3305:3306"
+    volumes:
+      - /home/database/mydatabase/user:/var/lib/mysql 
